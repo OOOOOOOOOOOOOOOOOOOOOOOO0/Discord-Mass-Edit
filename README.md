@@ -3,7 +3,7 @@
     Discord Mass Edit - Quickly edit every message in a channel in a purge-like way.
 </h1>
 <p align="center">
-    Discord Mass Edit is a unique, purging related Discord tool that differs from the regular mass DM. This tool will automatically edit every message in a chosen channel and change it to a random string.
+    Discord Mass Edit is a unique, purging related Discord tool that differs from the regular mass delete. This tool will automatically edit every message in a chosen channel and change it to a random string.
 </p>
 
 <h1></h1>
