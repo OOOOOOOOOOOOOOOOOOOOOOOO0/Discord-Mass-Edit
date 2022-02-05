@@ -11,11 +11,11 @@
 **Install**
 
 ```
-git clone https://github.com/execution/C0mptCrypt.git
+git clone https://github.com/execution/Discord-Mass-Edit.git
 ```
 
 ```
-cd C0mptCrypt
+cd Discord-Mass-Edit
 ```
 
 ```
@@ -24,16 +24,28 @@ pip install -r requirements.txt
 
 <h1></h1>
 
-**Check out some examples!**
+**Setup**
 
 ```
-cd Examples
+Open config.json
 ```
 
 ```
-cat encrypt_example.py
-cat decrypt_example.py
+Insert your discord token and a prefix between the " ".
 ```
 
-(To test these examples, drag them **out** of the examples folder)
-w
+<h1></h1>
+
+**Usage**
+
+```
+Enter a DM or a server channel you want to mass edit.
+```
+
+```
+Run the program (python main.py)
+```
+
+```
+Type ***.edit*** in that channel
+```
