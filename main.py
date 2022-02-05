@@ -45,8 +45,8 @@ async def on_message(message):
                     messages += 1
 
                     
-                except:
-                    Utilities.type(f"{Colours.Red} [>] Error editing {Colours.Reset}")
+                except Exception as error:
+                    print(f"{Colours.Red} [>] Error editing: {error} {Colours.Reset}")
         except:
             Utilities.type(f"{Colours.Red} [>] Can't read message history! {Colours.Reset}")
         Utilities.type(f"{Colours.Green} [>] Successfully edited {messages} messages in the channel: {ch}! {Colours.Reset}")
