@@ -1,2 +1,39 @@
-# Discord-Mass-Edit
-A mass editor for Discord.
+<h1 align="center">
+	<img src="https://i.pinimg.com/originals/7e/79/43/7e794341f12ca11c8e268e0d610625ff.jpg" width="150px"><br>
+    Discord Mass Edit - Quickly edit every message in a channel in a purge-like way.
+</h1>
+<p align="center">
+    Discord Mass Edit is a unique, purging related Discord tool that differs from the regular mass DM. This tool will automatically edit every message in a chosen channel and change it to a random string.
+</p>
+
+<h1></h1>
+
+**Install**
+
+```
+git clone https://github.com/execution/C0mptCrypt.git
+```
+
+```
+cd C0mptCrypt
+```
+
+```
+pip install -r requirements.txt
+```
+
+<h1></h1>
+
+**Check out some examples!**
+
+```
+cd Examples
+```
+
+```
+cat encrypt_example.py
+cat decrypt_example.py
+```
+
+(To test these examples, drag them **out** of the examples folder)
+w
