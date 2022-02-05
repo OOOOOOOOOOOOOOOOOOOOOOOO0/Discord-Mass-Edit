@@ -47,5 +47,5 @@ Run the program (python main.py)
 ```
 
 ```
-Type ***.edit*** in that channel
+Type .edit in that channel
 ```
