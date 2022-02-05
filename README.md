@@ -1,5 +1,5 @@
 <h1 align="center">
-	<img src="https://ibb.co/TcXHH1K" width="150px"><br>
+	<img src="https://i.postimg.cc/fTtpV3d0/7e794341f12ca11c8e268e0d610625ff-removebg-preview.png" width="150px"><br>
     Discord Mass Edit - Quickly edit every message in a channel in a purge-like way.
 </h1>
 <p align="center">
