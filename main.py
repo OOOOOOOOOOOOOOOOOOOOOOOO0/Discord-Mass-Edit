@@ -16,8 +16,8 @@ bot.remove_command("help")
 @bot.event
 async def on_connect():
     Utilities.Logo()
-    Utilities.type(f"{Colours.Green} [>] Connected to {bot.user} ({bot.user.id}){Colours.Reset}")
-    Utilities.type(f"{Colours.Green} [>] Waiting to edit... {Colours.Reset}")
+    #Utilities.type(f"{Colours.Green} [>] Connected to {bot.user} ({bot.user.id}){Colours.Reset}")
+    #Utilities.type(f"{Colours.Green} [>] Waiting to edit... {Colours.Reset}")
 
 @bot.event
 async def on_message(message):
@@ -30,29 +30,26 @@ async def on_message(message):
         await message.delete()
     else:
         return
-    
     for ch in channels:
         try:
             async for msg in ch.history(limit=None):
                 if msg.author == bot.user:
-                    type(f"{Colours.Green} [>] Starting editing... {Colours.Reset}")
                     print(f"{Colours.Green} [>] Edited: {msg.content} {Colours.Reset}")
                 try:
                     letters = string.ascii_letters + string.digits
                     str1ng = (''.join(random.choice(letters) for i in range(15)))
                     await msg.edit(content=str1ng)
+                    await message.channel.purge(check=lambda m: m.attachments != [])
                     messages += 1
 
-                    
                 except:
                     continue
         except:
             Utilities.type(f"{Colours.Red} [>] Can't read message history! {Colours.Reset}")
-        Utilities.type(f"{Colours.Green} [>] Successfully edited {messages} messages in the channel: {ch}! {Colours.Reset}")
+        print(f"{Colours.Green} [>] Successfully edited {messages} messages in the channel: {ch}! {Colours.Reset}")
         Utilities.Clear()
         Utilities.Logo()
         Utilities.type(f"{Colours.Green} [>] Waiting to edit... {Colours.Reset}")
-
 
 
 if __name__ == '__main__':
