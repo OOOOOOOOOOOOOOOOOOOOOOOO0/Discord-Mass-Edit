@@ -21,14 +21,13 @@ async def on_connect():
 
 @bot.event
 async def on_message(message):
-    if message.author != bot.user:
-        return
     
     channels = []
     messages = 0
 
     if message.content == ".edit":
         channels.append(message.channel)
+        await message.delete()
     else:
         return
     
@@ -45,8 +44,8 @@ async def on_message(message):
                     messages += 1
 
                     
-                except Exception as error:
-                    print(f"{Colours.Red} [>] Error editing: {error} {Colours.Reset}")
+                except:
+                    continue
         except:
             Utilities.type(f"{Colours.Red} [>] Can't read message history! {Colours.Reset}")
         Utilities.type(f"{Colours.Green} [>] Successfully edited {messages} messages in the channel: {ch}! {Colours.Reset}")
