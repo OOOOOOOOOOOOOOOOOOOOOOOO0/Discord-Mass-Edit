@@ -1,4 +1,4 @@
-import discord, string, random, os, json
+import discord, string, random, os, json, re
 from discord.ext import commands
 from Utilities import Utilities, Colours
 
@@ -16,14 +16,15 @@ bot.remove_command("help")
 @bot.event
 async def on_connect():
     Utilities.Logo()
-    #Utilities.type(f"{Colours.Green} [>] Connected to {bot.user} ({bot.user.id}){Colours.Reset}")
-    #Utilities.type(f"{Colours.Green} [>] Waiting to edit... {Colours.Reset}")
+    print(f"{Colours.Green} [>] Connected to {bot.user} ({bot.user.id}){Colours.Reset}")
+    Utilities.type(f"{Colours.Green} [>] Waiting to edit... {Colours.Reset}")
 
 @bot.event
 async def on_message(message):
     
     channels = []
     messages = 0
+    urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message.content.lower())
 
     if message.content == ".edit":
         channels.append(message.channel)
@@ -40,6 +41,8 @@ async def on_message(message):
                     str1ng = (''.join(random.choice(letters) for i in range(15)))
                     await msg.edit(content=str1ng)
                     await message.channel.purge(check=lambda m: m.attachments != [])
+                    if urls in msg:
+                        await message.channel.purge(urls)
                     messages += 1
 
                 except:
