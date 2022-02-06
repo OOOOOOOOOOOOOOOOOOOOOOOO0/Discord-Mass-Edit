@@ -26,7 +26,7 @@ async def on_message(message):
     messages = 0
     urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', message.content.lower())
 
-    if message.content == ".edit":
+    if message.content == f"{prefix}edit":
         channels.append(message.channel)
         await message.delete()
     else:
