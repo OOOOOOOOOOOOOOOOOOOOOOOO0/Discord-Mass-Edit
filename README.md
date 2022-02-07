@@ -47,5 +47,5 @@ Run the program (python main.py)
 ```
 
 ```
-Type .edit in that channel
+Type your prefix and then edit in that channel
 ```
