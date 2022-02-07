@@ -23,7 +23,7 @@ async def on_connect():
 @bot.command()
 async def edit(ctx, limit: int=None):
     messages = 0
-    images = 0
+    att = 0
     try:
         async for message in ctx.message.channel.history(limit=None).filter(lambda m: m.author == bot.user):
             try:
@@ -34,7 +34,7 @@ async def edit(ctx, limit: int=None):
                     messages +=1
                     if message.attachments:
                         await message.channel.purge(check=lambda m: m.attachments != [])
-                        images += 1
+                        att += 1
                     print(f'{Colours.Green} [>] Edited: {str1ng} {Colours.Reset}')
                 else:
                     await message.edit(content=mesg)
@@ -42,7 +42,7 @@ async def edit(ctx, limit: int=None):
                 print(f'{Colours.Green} [>] Edited: {str1ng} {Colours.Reset}')
             except:
                 continue 
-        Utilities.type(f'{Colours.Green} [>] Successfully edited {messages} messages and deleted {images} attatchments! {Colours.Reset}')
+        Utilities.type(f'{Colours.Green} [>] Successfully edited {messages} messages and deleted {att} attatchments! {Colours.Reset}')
         Utilities.Clear()
         Utilities.Logo()
         Utilities.type(f"{Colours.Green} [>] Waiting to edit... {Colours.Reset}")
