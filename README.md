@@ -29,9 +29,14 @@ pip install -r requirements.txt
 ```
 Open config.json
 ```
-
 ```
-Insert your discord token and a prefix between the " ".
+Insert your discord token
+```
+```
+Insert a prefix
+```
+```
+Insert a message for the program to edit to (leave blank for random)
 ```
 
 <h1></h1>
