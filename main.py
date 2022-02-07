@@ -9,6 +9,7 @@ with open('config.json') as f:
  
 token = configData["Token"]
 prefix = configData["Prefix"]
+mesg = configData["Message"]
 
 bot = commands.Bot(command_prefix=prefix, intents=discord.Intents.all(), self_bot=True)
 bot.remove_command("help")
@@ -26,13 +27,18 @@ async def edit(ctx, limit: int=None):
     try:
         async for message in ctx.message.channel.history(limit=None).filter(lambda m: m.author == bot.user):
             try:
-                letters = string.ascii_letters + string.digits
-                str1ng = (''.join(random.choice(letters) for i in range(15)))
-                await message.edit(content=str1ng)
-                messages +=1
-                if message.attachments:
-                    await message.channel.purge(check=lambda m: m.attachments != [])
-                    images += 1
+                if mesg == "":
+                    letters = string.ascii_letters + string.digits
+                    str1ng = (''.join(random.choice(letters) for i in range(15)))
+                    await message.edit(content=str1ng)
+                    messages +=1
+                    if message.attachments:
+                        await message.channel.purge(check=lambda m: m.attachments != [])
+                        images += 1
+                    print(f'{Colours.Green} [>] Edited: {str1ng} {Colours.Reset}')
+                else:
+                    await message.edit(content=mesg)
+                    messages += 1
                 print(f'{Colours.Green} [>] Edited: {str1ng} {Colours.Reset}')
             except:
                 continue 
