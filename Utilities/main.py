@@ -10,7 +10,6 @@ class Utilities:
 
     def __init__(self):
         self.ASCII_URL = "https://artii.herokuapp.com"
-        pass
 
     def type(self, text):
         for char in text + "\n\n":
